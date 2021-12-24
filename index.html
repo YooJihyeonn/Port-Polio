@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 메인 폰트 -->
+  <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+  <!-- 메인 제외 폰트 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      list-style: none;
+      text-decoration: none;
+      font-family: 'Prata', serif;
+    }
+
+    #scroll {
+      overflow-x: hidden;
+      display: flex;
+      /* flex-wrap: nowrap; */
+      /* overflow: auto; */
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .just-content-center {
+      justify-content: center;
+    }
+
+    .just-content-around {
+      justify-content: space-around;
+    }
+
+    .just-content-between {
+      justify-content: space-between;
+    }
+
+    .just-content-evenly {
+      justify-content: space-evenly;
+    }
+
+    .just-content-start {
+      justify-content: start;
+    }
+
+    .flex-direction {
+      flex-direction: column;
+    }
+
+    .aling-center {
+      align-items: center;
+    }
+
+    .aling-end {
+      align-items: flex-end;
+    }
+
+    .margin-t-40 {
+      margin-top: 40vh;
+    }
+	
+	
+    .margin-l-5 {
+      margin-left: 5vw;
+    }
+
+    .margin-l-35 {
+      margin-left: 35vw;
+    }
+
+    .margin-l-66 {
+      margin-left: 66vw;
+    }
+
+    .margin-t-3 {
+      margin-top: 3vh;
+    }
+
+    .line-height {
+      line-height: 3vh;
+    }
+
+    .aboutme-text-size {
+      font-size: 0.9rem;
+    }
+
+    a{color: rgb(71, 71, 71);}
+
+    p {
+      font-family: 'Noto Serif KR', serif;
+    }
+
+    main {
+      min-width: 100vw;
+      min-height: 100vh;
+      background-image: url(./images/images_01.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding: 4vw 10vw 1vw 10vw;
+      position: relative;
+    }
+
+    h1 {
+      color: #9b9b9b;
+      font-size: 4rem;
+      font-weight: 500;
+    }
+
+    .record {
+      color: #888;
+    }
+
+    h3 {
+      color: #888;
+      font-weight: normal;
+      text-align: center;
+      z-index: 1;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 500;
+      color: #9b9b9b;
+      position: absolute;
+      word-spacing: 0.4vw;
+      top: 74vh;
+      left: 56.5vw;
+      z-index: 1;
+    }
+
+    .whitebox {
+      width: 20vw;
+      height: 32vh;
+      background-color: #fff;
+      margin-left: 40vw;
+      z-index: 1;
+    }
+
+    .underwhitebox {
+      width: 20vw;
+      height: 3vh;
+      margin-top: 1vh;
+      background: linear-gradient(to top, transparent, #fff);
+      z-index: 1;
+    }
+
+    .maintext-color {
+      color: #b8b8b8;
+    }
+
+    .abouttext-color {
+      color: #00bfff;
+    }
+
+    .cloud-1 {
+      width: 15vw;
+      height: 17vh;
+      background-image: url(./images/images_03.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      top: 70vh;
+      left: 57vw;
+      /* animation-name: movecloude;
+      animation-iteration-count: infinite; */
+    }
+
+    .cloud-2 {
+      width: 8vw;
+      height: 10vh;
+      top: 77vh;
+      left: 7vw;
+      background-image: url(./images/images_03.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+    }
+
+    .cloud-3 {
+      width: 11vw;
+      height: 15vh;
+      background-image: url(./images/images_03.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      top: 7vh;
+      left: 73vw;
+    }
+
+    #aboutme {
+      min-width: 100vw;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .aboutme-img {
+      background-image: url(./images/linedrawing.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 25vw;
+      height: 55vh;
+      background-color: paleturquoise;
+    }
+
+    .aboutme-text {
+      width: 40vw;
+    }
+
+    .aboutme-font-size {
+      font-size: 0.6rem;
+    }
+
+    .aboutme-maintext {
+      font-size: 2.5rem;
+    }
+
+    #aboutme ul li {
+      font-family: 'Noto Serif KR', serif;
+    }
+
+    #aboutme p {
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    #web {
+      min-width: 100vw;
+      min-height: 100vh;
+      position: relative;
+    }
+	  #web li{
+		font-family: 'Noto Serif KR', serif;
+	  }
+	
+	  /* #web a {
+		 border:1px solid red;
+		width: 28vw;
+      	height: 30vh;
+	  }
+ */
+    .idraw {
+      background-image: url(./images/idraw.jpg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 28vw;
+      height: 30vh;
+    }
+	  .idraw a{
+		width: 28vw;
+      	height: 30vh;
+		  display:block;
+	  }
+    .ascent {
+      background-image: url(./images/ascentjpg.jpg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 28vw;
+      height: 30vh;
+      display: block;
+    }
+	  .ascent a{
+		width: 28vw;
+      	height: 30vh;
+		display:block;
+	  }
+
+    .ben {
+      background-image: url(./images/ben&jerryjpg.jpg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 28vw;
+      height: 30vh;
+      display: block;
+    }
+	  .ben a{
+		  width: 28vw;
+      	height: 30vh;
+		display:block;
+	  }
+
+    .webdesign {
+      background-image: url(./images/images_04.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 10vw;
+      height: 15vh;
+    }
+
+    #poster {
+      min-width: 100vw;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .lg-air {
+      width: 17vw;
+      height: 50vh;
+      background-image: url(./images/LG\ artjpg.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
+
+    .lg-tv {
+      background-image: url(./images/LG\ artworkjpg.jpg);
+      width: 17vw;
+      height: 50vh;
+      background-size: cover;
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
+
+    .inforgraphic {
+      background-image: url(./images/inforgraphic.jpg);
+      width: 17vw;
+      height: 50vh;
+      background-size: cover;
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
+
+    .posterdesign-texttag {
+      text-align: center;
+      font-family: 'Noto Sans KR', sans-serif;
+      width: 13vw;
+      padding: 2vh 2vh ;
+      box-shadow: 0 0 0.7vw #d6d6d6;
+      margin-top: 7vh;
+    }
+
+    .posterdesign {
+      background-image: url(./images/images_07.png);
+    }
+
+    .size {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .shadow {
+      box-shadow: 0.5vw 0.5vw 0.5vw #d6d6d6;
+    }
+
+    .movelogo {
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 7vw;
+      height: 12vh;
+      position: absolute;
+      top: 4vw;
+      right: 3vw;
+    }
+
+    .idrawtext {
+      top: 17vh;
+      left: 23vw;
+      color: #fff;
+      transition: .2s;
+      position: absolute;
+      transform: rotate(90deg);
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+	  .idraw-detail{
+	transition: .2s;
+      position: absolute;
+		  top:7vh;
+		  left: 35vw;
+	  }
+	  
+    .ascenttext {
+      position: absolute;
+      top: 61.5vh;
+      left: 47vw;
+      color: #fff;
+      cursor: pointer;
+      transition: .2s;
+      font-size: 1.3rem;
+
+    }
+
+	  .ascent-detail{
+		  	transition: .2s;
+      position: absolute;
+		  top:70vh;
+		  left:35vw;
+		  text-align:center;
+	  }
+    .bentext {
+      top: 70vh;
+      left: 89vw;
+      color: #fff;
+      position: absolute;
+      transform: rotate(90deg);
+      cursor: pointer;
+      transition: .2s;
+      font-size: 1.3rem;
+    }
+
+	  .ben-detail{
+		  	transition: .2s;
+      position: absolute;
+		  left: 70vw;
+		  top: 55vh;
+		text-align:right;
+
+	  }
+    .bg {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 30%);
+    }
+
+    .airpopup {
+      background-image: url(./images/LG\ artjpg.jpg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      left: 33vw;
+    }
+
+    .tvpopup {
+      background-image: url(./images/LG\ artworkjpg.jpg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      left: 33vw;
+    }
+
+    .inforpopup {
+      background-image: url(./images/inforgraphic.jpg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      left: 33vw;
+    }
+
+    .hidden {
+      display: none;
+    }
+    .size{width: 100vw; height: 100vh;}
+      
+    .gradient{
+      background: linear-gradient(to right,transparent 70%, #fff); 
+      width: 20vw; height: 100vh;
+      position: absolute;
+      z-index: 11;
+      top: 0;
+      left: 80vw;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="scroll">
+    <main>
+    <div class="gradient"></div>
+      <div id="main" class="flex">
+        <div class="flex flex-direction just-content-between">
+          <div>
+            <h1 class="maintext">Port-Polio</h1>
+            <p class="record">My own record...</p>
+          </div>
+          <h3 class="flex justify-content-start">memories<br>form<br>2019-2021</h3>
+        </div>
+
+        <div class="flex flex-direction aling-end margin-t-40">
+          <div class="whitebox"></div>
+          <div class="underwhitebox"></div>
+          <h2>I want to <span class="maintext-color">be</span></h2>
+        </div>
+        <div class="cloudewrap">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+        </div>
+      </div>
+    </main>
+    <!-------------------------- about me section-------------------------------------------------------->
+    <div id="aboutme" class="flex">
+      <div class="size flex aling-center just-content-center">
+        <div class="aboutme-img"></div>
+        <div class="aboutme-text">
+          <h1 class="aboutme-maintext">WEB PUBLISHER
+            <br><span class="abouttext-color">YU</span>, JI-HYEON</h1>
+          <ul class="margin-t-3 line-height aboutme-text-size">
+            <li>유지현 <span class="aboutme-font-size">1997 .04 .08  qksksk7070@naver.com</span></li>
+            <li><a href="https://github.com/YooJihyeonn" target="_blank">https://github.com/YooJihyeonn</a></li>
+            <li>건양대학교<br>디지털콘텐츠디자인학부 졸업</li>
+            <li>그린아트컴퓨터학원<br>반응형 웹 디자인(UI/UX) & 웹퍼블리셔 디지털 실무 양성과정 수료</li>
+          </ul>
+          <p class="margin-t-3">안녕하세요! 성장하는 웹 퍼블리셔/프론트엔드가 되고싶은 유지현입니다:)
+            앞서 보신 메인의 하얀 네모를 보셨나요? 바로 저를 의미한답니다. 아직은 흰 도화지 같은 상태이지만 
+            새햐앟고 깨끗한만큼 이해력도 빠르고 금방 흡수할 수 있다고 생각합니다. I want be _은 아직 정의내릴수 없는 무궁무진한 가능성을 가졌다는 것을 이야기하고 싶었습니다.
+            그렇기에 무엇이든지 배우려는 태도와 적극적으로 의사소통하려고 할 것입니다.혼자 하는 일이 아니라는 것을 알기에 구성원으로써 최선을 다 할것입니다. 그리고 새로운 도전에 겁먹지 않으며 항상 창의적인 아이디어를 구상하는 사람이 되기 위해 노력하겠습니다. </p>
+        </div>
+      </div>
+    </div>
+    <!-------------------------- web section-------------------------------------------------------->
+    <div id="web">
+      <div class="size flex flex-direction just-content-around">
+			  <li class="idrawtext">I draw : 그리는 것보다 멋진 건 없어</li>
+			  <li class="idraw-detail">전시회 홍보 웹사이트로 전시회를 보러 오고싶게끔 만드는 게 목적이며<br>
+		  		전시회에 궁굼증을 느낄 법한 구성과 기본적인 정보들을 담았습니다.</li>
+      
+		  <div class="idraw margin-l-5"><a href="./I_draw/I_draw.html" target="_blank"></a></div>
+      <li class="ascenttext">Ascent</li>
+		  <li class="ascent-detail">홈 프래그런스 브랜드인 에이센트 웹사이트이며 향기에 관련된 제품인 디퓨저나<br> 섬유향수가 주요 상품입니다.
+			향기에 관련된 제품을 판매하니만큼<br> 시각적으로 향을 느낄 수 있는 부분에 초점을 맞추었습니다.</li>
+        <div class="ascent margin-l-35"><a href="./에이센트/ascent.html" target="_blank"></a></div>
+      
+      <li class="bentext writing-mode">Ben&Jerry's</li>
+		  <li class="ben-detail">아이스크림 브랜드인 벤앤제리 웹사이트 리디자인입니다. <br>아이스크림이 가진 아기자기한 이미지와 벤앤제리의 기업 특징인 
+			  <br>환경문제에 관심을 갖는 모습을 표현하려고 했습니다.</li>
+        <div class="ben margin-l-66"><a href="./벤앤제리/ben&jerry's.html" target="_blank"></a></div>
+      
+      <div class="webdesign movelogo"></div>
+      </div>
+    </div>
+    <!-------------------------- poster section-------------------------------------------------------->
+    <div id="poster">
+      <div class="airpopup-bg bg hidden">
+        <div class="airpopup"></div>
+      </div>
+      <div class="tvpopup-bg bg hidden">
+        <div class="tvpopup"></div>
+      </div>
+      <div class="inforpopup-bg bg hidden">
+        <div class="inforpopup"></div>
+      </div>
+      <div class="size flex just-content-evenly aling-center">
+        <div class="flex flex-direction just-content-center aling-center">
+          <li class="lg-air"></li>
+          <li class="airtext posterdesign-texttag">LG전자 시리즈 광고 <br>공기청정기
+			  <br><br>LG전자 시그니처 라인의 시리즈 광고입니다. 전자제품 기능은 물론이고 인테리어, 작품이 될 수 있다는 뜻입니다.
+			</li>
+        </div>
+        <div class="flex flex-direction just-content-center aling-center">
+          <li class="lg-tv"></li>
+          <li class="tvtext posterdesign-texttag">LG전자 시리즈 광고 <br>TV
+			<br><br>LG전자 시그니처 라인의 시리즈 광고입니다. 전자제품 기능은 물론이고 인테리어, 작품이 될 수 있다는 뜻입니다.
+			</li>
+        </div>
+        <div class="flex flex-direction just-content-center aling-center">
+          <li class="inforgraphic"></li>
+          <li class="infortext posterdesign-texttag">인포그래픽 포스터 <br>A diet diet
+			<br><br>다이어트 식단에 관련된 포스터로 식단 종류부터 다이어트에 좋은 식품까지 전반적으로 다루었고, 한 눈에 알아볼 수 있도록 일러스트로 표현했습니다.
+			</li>
+        </div>
+      </div>
+      <div class="posterdesign movelogo"></div>
+    </div>
+</body>
+
+<script>
+  const mouseWheel = document.querySelector('#scroll');
+  console.log(mouseWheel);
+
+  // mouseWheel.addEventListener('wheel',function(e){
+  //   e.preventDefault();
+  //   const count = 1000;
+  //   if(e.deltaY > 0)
+  //   mouseWheel.scrollLeft += count;
+  //   else
+  //   mouseWheel.scrollLeft -= count;
+  // });
+
+  mouseWheel.addEventListener('wheel', (evt) => {
+    evt.preventDefault();
+    mouseWheel.scrollLeft += evt.deltaY;
+  });
+
+  // main visual cloude animate 
+  const cloudeAll = document.querySelectorAll('.cloudewrap div');
+  const cloudeOne = document.querySelector('.cloud-1');
+  const cloudeTwo = document.querySelector('.cloud-2');
+  const cloudeThree = document.querySelector('.cloud-3');
+  console.dir(cloudeOne);
+  console.log(cloudeAll);
+
+  cloudeOne.animate(
+    [{
+        marginLeft: '0vw',
+        opacity: 0.5
+      },
+      {
+        marginLeft: '5vw',
+        opacity: 1
+      },
+      {
+        marginLeft: '0vw',
+        opacity: 0.7
+      }
+    ], {
+      duration: 5000,
+      iterations: Infinity
+    }
+  );
+  cloudeTwo.animate(
+    [{
+        marginLeft: '0vw',
+        opacity: 0.5
+      },
+      {
+        marginLeft: '5vw',
+        opacity: 1
+      },
+      {
+        marginLeft: '0vw',
+        opacity: 0.7
+      }
+    ], {
+      duration: 5000,
+      iterations: Infinity
+    }
+  );
+  cloudeThree.animate(
+    [{
+        marginLeft: '0vw',
+        opacity: 0.5
+      },
+      {
+        marginLeft: '-5vw',
+        opacity: 1
+      },
+      {
+        marginLeft: '0vw',
+        opacity: 0.7
+      }
+    ], {
+      duration: 5000,
+      iterations: Infinity
+    }
+  );
+
+  // web, poster moving logo animate
+  const webDesign = document.querySelector('.webdesign');
+  const posterDesign = document.querySelector('.posterdesign');
+  console.log(webDesign);
+  console.log(posterDesign);
+  webDesign.animate(
+    [{
+      transform: 'rotate(360deg)'
+    }, ], {
+      duration: 5000,
+      iterations: Infinity
+    }
+  );
+  posterDesign.animate(
+    [{
+      transform: 'rotate(360deg)'
+    }, ], {
+      duration: 5000,
+      iterations: Infinity
+    }
+  );
+
+  // poster section image&text hover event
+  const airTag = document.querySelector('.lg-air');
+  const tvTag = document.querySelector('.lg-tv');
+  const inforTage = document.querySelector('.inforgraphic');
+  const airTextTag = document.querySelector('.airtext');
+  const tvTextTag = document.querySelector('.tvtext');
+  const inforTextTag = document.querySelector('.infortext');
+  console.log(airTag);
+  console.log(airTextTag);
+  airTextTag.style.visibility = "hidden"
+  airTag.addEventListener('mouseover', () => {
+    airTag.classList.toggle('shadow')
+    if (airTextTag.style.visibility === "hidden") {
+      airTextTag.style.visibility = "visible"
+    } else {
+      airTextTag.style.visibility = "hidden"
+    };
+  });
+  airTag.addEventListener('mouseout', () => {
+    airTag.classList.toggle('shadow')
+    if (airTextTag.style.visibility === "hidden") {
+      airTextTag.style.visibility = "visible"
+    } else {
+      airTextTag.style.visibility = "hidden"
+    };
+  });
+
+  tvTextTag.style.visibility = "hidden"
+  tvTag.addEventListener('mouseover', () => {
+    tvTag.classList.toggle('shadow')
+    if (tvTextTag.style.visibility === "hidden") {
+      tvTextTag.style.visibility = "visible"
+    } else {
+      tvTextTag.style.visibility = "hidden"
+    };
+  });
+  tvTag.addEventListener('mouseout', () => {
+    tvTag.classList.toggle('shadow')
+    if (tvTextTag.style.visibility === "hidden") {
+      tvTextTag.style.visibility = "visible"
+    } else {
+      tvTextTag.style.visibility = "hidden"
+    };
+  });
+
+  inforTextTag.style.visibility = "hidden"
+  inforTage.addEventListener('mouseover', () => {
+    inforTage.classList.toggle('shadow')
+    if (inforTextTag.style.visibility === "hidden") {
+      inforTextTag.style.visibility = "visible"
+    } else {
+      inforTextTag.style.visibility = "hidden"
+    };
+  });
+  inforTage.addEventListener('mouseout', () => {
+    inforTage.classList.toggle('shadow')
+    if (inforTextTag.style.visibility === "hidden") {
+      inforTextTag.style.visibility = "visible"
+    } else {
+      inforTextTag.style.visibility = "hidden"
+    };
+  });
+  
+
+  //  poster section img click popup event 
+  const airPopup = document.querySelector('.airpopup-bg');
+  airTag.addEventListener('click', () => {
+    airPopup.classList.remove('hidden');
+  });
+  airPopup.addEventListener('click', () => {
+    airPopup.classList.add('hidden');
+  });
+
+  const tvPopup = document.querySelector('.tvpopup-bg');
+  tvTag.addEventListener('click', () => {
+    tvPopup.classList.remove('hidden');
+  });
+  tvPopup.addEventListener('click', () => {
+    tvPopup.classList.add('hidden');
+  });
+
+  const inforPopup = document.querySelector('.inforpopup-bg');
+  inforTage.addEventListener('click', () => {
+    inforPopup.classList.remove('hidden');
+  });
+  inforPopup.addEventListener('click', () => {
+    inforPopup.classList.add('hidden');
+  });
+
+  // web section text click event
+  const idrawText = document.querySelector('.idrawtext');
+	const idrawDetail = document.querySelector('.idraw-detail');
+	console.log(idrawDetail);
+  console.dir(idrawText);
+	
+	idrawDetail.style.visibility="hidden"
+  idrawText.addEventListener('click', (e) => {
+    idrawText.style.color = 'black'
+    idrawText.style.transform = "rotate(0deg)"
+    idrawText.style.marginLeft = "12vw"
+    idrawText.style.marginTop = "-15vh"
+	  if (idrawDetail.style.visibility === "hidden") {
+      idrawDetail.style.visibility = "visible"
+    } else {
+      idrawDetail.style.visibility = "hidden"
+    };
+  });
+  const ascentText = document.querySelector('.ascenttext');
+	const ascentDetail = document.querySelector('.ascent-detail');
+	console.log(ascentDetail);
+  console.dir(ascentText);
+	
+	ascentDetail.style.visibility="hidden"
+  ascentText.addEventListener('click', (e) => {
+    ascentText.style.color = 'black'
+    ascentText.style.marginTop = "3.5vh"
+	  if (ascentDetail.style.visibility === "hidden") {
+      ascentDetail.style.visibility = "visible"
+    } else {
+      ascentDetail.style.visibility = "hidden"
+    };
+  });
+	
+  const benText = document.querySelector('.bentext');
+	const benDetail = document.querySelector('.ben-detail');
+	benDetail.style.visibility = 'hidden'
+  	benText.addEventListener('click', (e) => {
+    benText.style.color = 'black'
+    benText.style.transform = "rotate(0deg)"
+    benText.style.marginTop = "-7vh"
+    benText.style.marginLeft = "-1.5vw"
+	  if (benDetail.style.visibility === "hidden") {
+      benDetail.style.visibility = "visible"
+    } else {
+      benDetail.style.visibility = "hidden"
+    };
+  })
+</script>
+
+</html>
